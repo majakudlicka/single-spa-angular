@@ -7,10 +7,16 @@
     <title>Your application</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="importmap-type" content="systemjs-importmap">
+    <script>
+      if (global === undefined) {
+        var global = window;
+      }
+    </script>
+    <script src="https://unpkg.com/core-js-bundle/minified.js"></script>
     <script type="systemjs-importmap">
       {
         "imports": {
-          "app1": "http://localhost:4201/main.js",
+          "bbplm2-client": "http://localhost:4200/main.js",
           "app2": "http://localhost:4202/main.js",
           "navbar": "http://localhost:4300/main.js",
           "single-spa": "https://cdnjs.cloudflare.com/ajax/libs/single-spa/5.5.0/system/single-spa.min.js",
@@ -26,14 +32,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/4.0.0/extras/amd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/4.0.0/extras/named-exports.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/4.0.0/extras/named-register.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="assets/img/favicon-16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="assets/img/favicon-32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="assets/img/favicon-32.png" sizes="96x96" />
+
+    <!-- This tag is for vuetify -->
+    <!--The icons font must be imported here and in the styles for the Vue component-->
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet" />
     <template id="single-spa-layout">
       <single-spa-router>
         <nav class="topnav">
           <application name="navbar"></application>
         </nav>
         <div class="main-content">
-          <route path="app1">
-            <application name="app1"></application>
+          <route path="bbplm2-client">
+            <application name="bbplm2-client"></application>
           </route>
           <route path="app2">
             <application name="app2"></application>

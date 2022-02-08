@@ -3,12 +3,16 @@
   "description": "The single-spa root config for coexisting-angular-microfrontends",
   "main": "index.js",
   "scripts": {
-    "start": "serve -s -l 4200"
+    "start": "serve -s -l 4500"
   },
   "author": "Joel Denning",
   "license": "MIT",
   "devDependencies": {
     "serve": "^11.1.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@angular/localize": "^13.2.2",
+    "single-spa": "^5.9.3",
+    "single-spa-layout": "^2.0.1"
+  }
 }
